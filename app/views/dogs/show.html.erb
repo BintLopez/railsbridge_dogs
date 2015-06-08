@@ -1,3 +1,5 @@
+<p><%= link_to '<< Back', dogs_path %></p>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -10,4 +12,4 @@
 </p>
 
 <%= link_to 'Edit', edit_dog_path(@dog) %> |
-<%= link_to 'Back', dogs_path %>
+<%= link_to 'Delete', @dog, method: :delete, data: { confirm: 'Are you sure?' } %>
