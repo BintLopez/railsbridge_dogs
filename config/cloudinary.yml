@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dy5zw8vjp
+  api_key: '869772383438174'
+  api_secret: oOI0GYKDmctRSFaQHRkeF5RV-EQ
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dy5zw8vjp
+  api_key: '869772383438174'
+  api_secret: oOI0GYKDmctRSFaQHRkeF5RV-EQ
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dy5zw8vjp
+  api_key: '869772383438174'
+  api_secret: oOI0GYKDmctRSFaQHRkeF5RV-EQ
+  enhance_image_tag: true
+  static_image_support: false
