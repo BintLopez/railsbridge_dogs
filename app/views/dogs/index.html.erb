@@ -1,7 +1,9 @@
-<p id="notice"><%= notice %></p>
-
+<header>
 <h1>Dogs</h1>
-<%= link_to 'New Dog', new_dog_path %>
+<%= link_to 'New Dog', new_dog_path, class: "new_dog_link" %>
+</header>
+
+<p id="notice"><%= notice %></p>
 
 <p>Sort:
   <%= link_to "by name", dogs_path(sort_by: :name) %>
