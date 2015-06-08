@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Dogs</h1>
+<%= link_to 'New Dog', new_dog_path %>
 
 <p>Sort:
   <%= link_to "by name", dogs_path(sort_by: :name) %>
@@ -11,29 +12,10 @@
   <%= link_to "dogs with pictures", dogs_path(pictures: :true) %>
 </p>
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Name</th>
-      <th>Age</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @dogs.each do |dog| %>
-      <tr>
-        <td>
-          <%= image_tag(dog.picture_url(:thumb))  unless dog.picture_url(:thumb).blank? %>
-        </td>
-        <td><b><%= link_to dog.name, dog %></b></td>
-        <td><%= dog.age %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Dog', new_dog_path %>
+<% @dogs.each do |dog| %>
+  <div class="dog_box">
+    <h3><%= link_to dog.name, dog %></h3>
+    <%= image_tag(dog.picture_url(:standard))  unless dog.picture_url(:thumb).blank? %>
+    <p>Age: <%= dog.age %></p>
+  </div>
+<% end %>
