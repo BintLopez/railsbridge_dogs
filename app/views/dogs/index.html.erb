@@ -1,6 +1,7 @@
 <header>
 <h1>Dogs</h1>
-<%= link_to 'New Dog', new_dog_path, class: "new_dog_link" %>
+<%= link_to 'New Dog', new_dog_path, :class => "new_dog_link" %>
+<%= link_to 'Breeds', breeds_path %>
 </header>
 
 <p id="notice"><%= notice %></p>
@@ -14,10 +15,18 @@
   <%= link_to "dogs with pictures", dogs_path(pictures: :true) %>
 </p>
 
+<p>
+	<% Breed.all.each do |b| %>
+	  <%= link_to b.name, dogs_path(breed_id: b.id) %>
+	<% end %>
+	<%= link_to "All Breeds", dogs_path %>
+</p>
+
 <% @dogs.each do |dog| %>
   <div class="dog_box">
     <h3><%= link_to dog.name, dog %></h3>
     <%= image_tag(dog.picture_url(:standard))  unless dog.picture_url(:thumb).blank? %>
     <p>Age: <%= dog.age %></p>
+    <p>Breed: <%= dog.breed.try(:name) %></p>
   </div>
 <% end %>
